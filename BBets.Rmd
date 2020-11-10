@@ -8,6 +8,13 @@ output:
     toc: true
 ---
 
+# Introduction
+
+<!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?!-->
+
+ At the first day of class there are 35 students in Math Statistics class and professor Brownlow always proposes this bet to his students "I will wager $2 to your bet of $1 that at least two people in today's class have  the same birthday.  He tells me he has made that bet 637 times so far. Where do you think his profits are? Discuss this in a markdown document
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 require(tidyverse)
@@ -44,10 +51,12 @@ print(sortProfit[25])
 print(sortProfit[975])
 ```
 
-The 95% confidence interval shows that the values range from `r sortProfit[25]` to `r sortProfit[975]` . However if you run that code again, the values will continue to change.
+The 95% confidence interval shows that the values range from `r sortProfit[25]` to `r sortProfit[975]` . However if you run that code again, the values will continue to change. We know now that 35 students is the wrong size for this 2:1 bet.
 
+# Methods
 
-We know now that 35 students is the wrong size for this 2:1 bet.
+<!--Decide on your methods:  In this section explain the approach you will take to attack the issue --- how will you decide on a likely estimate of professor Brownlow's earnings or losses after 637 bets. Also explain how you construct a 95% confidence interval about your estimate of his winnings !-->
+
 
 ```{r}
 days=1:365
@@ -71,7 +80,7 @@ saveProfit[run]=profit
 hist(saveProfit)
 ```
 
-Based off this chart we can agree that 28 or 29 students is the right size for this 2:1 bet.
+The 95% confidence interval tells me that, based off this chart we can agree that 28 or 29 students is the right size for this 2:1 bet.
 
 ```{r}
 days=1:365
@@ -98,16 +107,6 @@ hist(saveProfit)
 This chart shows us that in order for this to be a fair game with 35 students Dr. J must pay $4.50 cents each time he loses. 
 
 <!-- We recommend you use git branches -- create a separate branch for each major section i.e. Introduction, Methods, Results, Inferential Results, and Discussion and Conclusions - leave the YAML block untouched until the final merge where you put in your own name !-->
-
-# Introduction
-
-<!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?!-->
-
- At the first day of class there are 35 students in Math Statistics class and professor Brownlow always proposes this bet to his students "I will wager $2 to your bet of $1 that at least two people in today's class have  the same birthday.  He tells me he has made that bet 637 times so far. Where do you think his profits are? Discuss this in a markdown document
-
-# Methods
-
-<!--Decide on your methods:  In this section explain the approach you will take to attack the issue --- how will you decide on a likely estimate of professor Brownlow's earnings or losses after 637 bets. Also explain how you construct a 95% confidence interval about your estimate of his winnings !-->
 
 
 # Profit Estimate
